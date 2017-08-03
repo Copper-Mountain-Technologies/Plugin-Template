@@ -1,4 +1,4 @@
-﻿// Copyright ©2015-2016 Copper Mountain Technologies
+﻿// Copyright ©2015-2017 Copper Mountain Technologies
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"),
 // to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense,
@@ -31,10 +31,10 @@ namespace CopperMountainTech
     public enum VnaModelEnum
     {
         UNKNOWN,
-        PLANAR_R54, PLANAR_R140,
+        R54, R140, RP60, RP5, RP180,
         TR1300_1, TR5048, TR7530,
-        C1209, C1220, S5048, S5070, S7530, PLANAR_304_1, PLANAR_804_1, C4209,
-        PLANAR_808_1
+        C1209, C2209, C1220, C2220, S5048, S5065, S5070, S5085, S5180, S7530, PLANAR_304_1, PLANAR_804_1, C4209, C4220,
+        PLANAR_808_1, C1409, C2409, C1420, C4409
     }
 
     public enum VnaInfoStringIndexEnum : int
@@ -131,11 +131,20 @@ namespace CopperMountainTech
                     return VnaModelEnum.UNKNOWN;
 
                 // R family types
-                case "PLANAR R54":
-                    return VnaModelEnum.PLANAR_R54;
+                case "R54":
+                    return VnaModelEnum.R54;
 
-                case "PLANAR R140":
-                    return VnaModelEnum.PLANAR_R140;
+                case "R140":
+                    return VnaModelEnum.R140;
+
+                case "RP60":
+                    return VnaModelEnum.RP60;
+
+                case "RP5":
+                    return VnaModelEnum.RP5;
+
+                case "RP180":
+                    return VnaModelEnum.RP180;
 
                 // TR family types
                 case "PLANAR TR1300/1":
@@ -151,14 +160,29 @@ namespace CopperMountainTech
                 case "C1209":
                     return VnaModelEnum.C1209;
 
+                case "C2209":
+                    return VnaModelEnum.C2209;
+
                 case "C1220":
                     return VnaModelEnum.C1220;
+
+                case "C2220":
+                    return VnaModelEnum.C2220;
 
                 case "S5048":
                     return VnaModelEnum.S5048;
 
+                case "S5065":
+                    return VnaModelEnum.S5065;
+
                 case "S5070":
                     return VnaModelEnum.S5070;
+
+                case "S5085":
+                    return VnaModelEnum.S5085;
+
+                case "S5180":
+                    return VnaModelEnum.S5180;
 
                 case "S7530":
                     return VnaModelEnum.S7530;
@@ -172,9 +196,24 @@ namespace CopperMountainTech
                 case "C4209":
                     return VnaModelEnum.C4209;
 
+                case "C4220":
+                    return VnaModelEnum.C4220;
+
                 // S4 family types
                 case "PLANAR-808/1":
                     return VnaModelEnum.PLANAR_808_1;
+
+                case "C1409":
+                    return VnaModelEnum.C1409;
+
+                case "C2409":
+                    return VnaModelEnum.C2409;
+
+                case "C1420":
+                    return VnaModelEnum.C1420;
+
+                case "C4409":
+                    return VnaModelEnum.C4409;
             }
         }
 
